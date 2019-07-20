@@ -11,11 +11,21 @@ public class Sprite {
 	public int getWidth() {return width;}
 	public int getHeight() {return height;}
 	
-	public void setXPosition(int newX ) {
+	public void setXPosition(int newX, int panelWidth) {
 		xPosition = newX;
+		if (xPosition <0) {
+			xPosition = 0;
+		} else if (xPosition + width > panelWidth) {
+			xPosition = panelWidth - width;
+		}
 	}
-	public void setYPosition(int newY) {
+	public void setYPosition(int newY, int panelHeight) {
 		yPosition = newY;
+		if (yPosition <0) {
+			yPosition = 0;
+		} else  if (yPosition + height > panelHeight) {
+			yPosition = panelHeight - height;
+		}
 	}
 	public void setXVelocity(int newXVelocity) {
 		xVelocity = newXVelocity;
@@ -29,4 +39,21 @@ public class Sprite {
 	public void setHeight(int newHeight) {
 		height = newHeight;
 	}
+	
+	private int initialXPosition, initialYPosition;
+	public void setInitialPosition (int initialX, int initialY) {
+		initialXPosition = initialX;
+		initialYPosition = initialY;
+	}
+	
+	public void resetToInitialPosition() {
+		setXPosition(initialXPosition, height);
+		setYPosition(initialYPosition, height);
+	}
 }
+	
+	
+
+	
+
+
