@@ -10,21 +10,15 @@ public class Ball extends Sprite{
 			setWidth(BALL_WIDTH);
 			setHeight(BALL_HEIGHT);
 			setColour(BALL_COLOUR);
-			setInitialPoistion(panelWidth/2 - (getWidth()/2), panelHeight/2 - (getHeight()/2));
+			setInitialPosition(panelWidth/2 - (getWidth()/2), panelHeight/2 - (getHeight()/2));
 			
 			resetToInitialPosition();
 			
 		}
 
-		private void setInitialPoistion(int i, int j) {
-			// TODO Auto-generated method stub
-			
-		}
 
-		private void setColour(Color ballColour) {
-			// TODO Auto-generated method stub
-			
-		}
+
+		
 
 			
 		}
